@@ -5,14 +5,15 @@ spring:
     active: local
   ai:
     ollama:
+      enabled: true
       base-url: http://localhost:11434
       chat:
-        model: deepseek-r1:1.5b
+        options:
+          model: deepseek-r1:1.5b
 server:
   port: 1207
   servlet:
     context-path: /api
-# springdoc-openapi ??????
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
@@ -24,7 +25,6 @@ springdoc:
     - group: 'default'
       paths-to-match: '/**'
       packages-to-scan: com.littleperson.personaiagent.controller
-# knife4j???????????????
 knife4j:
   enable: true
   setting:
